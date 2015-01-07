@@ -33,6 +33,7 @@ class EventsController < ApplicationController
             format.xml # show.xml.builder
             format.json { render :json => { id: @event.id, name: @event.name}.to_json }
         end
+        Rails.logger.error("event: #{@event.inspect}")
     end
 
     def edit

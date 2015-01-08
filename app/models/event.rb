@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
     has_one :location
-    has_many :attendees
+    has_many :attendees, :dependent => :delete_all
     belongs_to :category
     validates_presence_of :name
 

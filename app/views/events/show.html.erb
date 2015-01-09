@@ -1,4 +1,5 @@
 <%= @event.name %>
 <%= simple_format(@event.description) %>
 <%= debug(@event) %>
+<p> Category: <%= @event.category.name %> </p>
 <p> <%= link_to 'Back to index', events_path %> </p>

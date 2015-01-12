@@ -1,4 +1,8 @@
-<%= form_for setup_event(@event), :url => events_path do |f| %>
-    <%= render :partial => 'form', :locals => { :f => f } %>
-    <%= f.submit "Create" %>
+<%= simple_form_for(@event) do |f| %>
+    <%= f.input :name, :label => "Event Name" %>
+    <%= f.input :description, :as => :text, :label => "Description" %>
+
+    <%= f.association :category, :label => "Category" %>
+    <%= f.association :groups, :as => :check_boxes, :label => "Groups" %>
+    <%= f.submit %>
 <% end %>

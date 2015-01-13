@@ -20,4 +20,8 @@
 
 <%= link_to 'New Event', new_event_path %>
 <%= link_to "Atom feed", events_path(:format => :atom) %>
+<br><br>
+<%= link_to 'Sort by Name', events_path( :order => "name")  %>
+<%= link_to 'Sort by Default', events_path  %>
+
 <%= paginate @events %>

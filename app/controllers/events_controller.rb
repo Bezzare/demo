@@ -8,7 +8,8 @@ class EventsController < ApplicationController
     end
 
     def index
-        @events = Event.page(params[:page]).per(5)
+        sort_by = (params[:order] == 'name') ? 'name' : 'created_at'
+        @events = Event.order(sort_by).page(params[:page]).per(5)
         respond_to do |format|
           format.html # index.html.erb
           format.xml { render :xml => @events.to_xml }

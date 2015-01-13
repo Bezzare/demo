@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
     resources :events do
+      collection do
+        get :search
+      end
+
       resources :attendees, :controller => 'event_attendees'
       resource :location, :controller => 'event_locations'
       resource :state, :controller => 'event_states'

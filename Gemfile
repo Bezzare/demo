@@ -40,3 +40,5 @@ gem 'spring',        group: :development
 
 gem "kaminari"
 gem "simple_form"
+
+gem "dalli"
